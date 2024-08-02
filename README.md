@@ -1,4 +1,4 @@
-# Contactless-Dustbin
+# contactless-dustbin
 The main objective of the project is to design a smart dustbin which will help in keeping our environment clean and also eco friendly. We are inspired from Swaach Bharat Mission. Nowadays technologies are getting smarter day-by-day so, as to clean the environment we are designing a smart dustbin by using ESP32s. This smart dustbin is built on the microcontroller based system having ultrasonic sensor,infrared sensors and servo motor on the dustbin. 
 If dustbin is not maintained than these can cause an unhealthy environment and can cause pollute that affect our health. In this proposed technology we have designed a smart dustbin using ESP32, along with ultrasonic sensor, servo motor,infrared sensor ,pizo buzzer and jumper wire. After all hardware and software connection, now Smart Dustbin program will be run. Dustbin lid will when someone comes near at some range than wait for user to put garbage and close it. It’s properly running or not. It will also notify you that the bin is full,since it is programmed in such manner.
 ![image](https://github.com/user-attachments/assets/c3cc8471-e222-4e76-ae72-bf5dd72f8510)
