@@ -1,0 +1,52 @@
+#include <Servo.h>
+Servo myservo;
+int infra=21;
+int trigPin=5;
+int echoPin=18;
+int buzzerPin=12;
+void setup(){
+  Serial.begin(9600);
+  pinMode(infra,INPUT);
+  pinMode(echoPin,INPUT);
+  pinMode(trigPin,OUTPUT);
+  myservo.attach(13);
+  pinMode(buzzerPin,OUTPUT);
+}
+
+void loop() {
+
+  if(digitalRead(infra)==1)
+  {
+    Serial.println("Not Present");
+    myservo.write(0);  
+    long duration,distance;
+    digitalWrite(trigPin, LOW); 
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH); 
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+    duration=pulseIn(echoPin,HIGH);
+    distance=(duration/2)/29.1;
+    Serial.print(distance);
+    Serial.println(" cm");
+    if(distance < 10){
+      digitalWrite(buzzerPin,HIGH);
+      delay(100);
+      digitalWrite(buzzerPin,LOW);   
+    }
+    else{
+      digitalWrite(buzzerPin,LOW);
+    }
+    delay(200);
+  }
+  else
+  {
+    Serial.println("Present");
+    digitalWrite(buzzerPin,HIGH);
+    delay(500);  
+    digitalWrite(buzzerPin,LOW);
+    myservo.write(130);
+    delay(5000);
+  }
+  delay(100);
+  }
